@@ -42,7 +42,7 @@ const MyPosts = () => {
           </h1>
           <div className="my-posts">
             {images.map((image) => (
-              <PostCard key={image._id} images={image} showDelete={true} />
+              <PostCard key={image._id} images={image} showDelete={true} username={image.owner.username} />
             ))}
           </div>
         </div>
