@@ -18,7 +18,7 @@ function App() {
         <Route element={<LandingPage />} path="/" />
         <Route element={<Register />} path="/register" />
         <Route element={!user ? <Login /> : <Feed/>} path="/login" />
-        <Route element={<Feed />} path="/feed" />
+        <Route element={user && <Feed />} path="/feed" />
         <Route element={<MyPosts />} path="/my-posts" />
       </Routes>
       <Toaster position="bottom-center" />

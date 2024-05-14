@@ -35,12 +35,11 @@ const Login = () => {
 
         navigate("/feed");
         toast.success("Login Successful");
-        console.log(data.data.user);
       } else {
         toast.error(data.data.message);
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Login Failed");
     }
   };
 
