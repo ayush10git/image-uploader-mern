@@ -3,6 +3,7 @@ import { getMyImages } from "../../redux/api/imageAPI";
 import PostCard from "../../components/post card/PostCard";
 import "./myPosts.scss";
 import Navbar from "../../components/navbar/Navbar";
+import { FadeLoader } from "react-spinners";
 
 const MyPosts = () => {
   const [images, setImages] = useState([]);
@@ -29,17 +30,23 @@ const MyPosts = () => {
   return (
     <>
       <Navbar />
-      <div
-        className="posts"
-        style={images.length == 0 ? { height: "calc(100vh - 70px)" } : {}}
-      >
-        <h1>{images.length != 0 ? "Your Posts" : "You Haven't Posted Yet!"}</h1>
-        <div className="my-posts">
-          {images.map((image) => (
-            <PostCard key={image._id} images={image} showDelete={true} />
-          ))}
+      {loading ? (
+        <FadeLoader color="#786bb4"/>
+      ) : (
+        <div
+          className="posts"
+          style={images.length == 0 ? { height: "calc(100vh - 70px)" } : {}}
+        >
+          <h1>
+            {images.length != 0 ? "Your Posts" : "You Haven't Posted Yet!"}
+          </h1>
+          <div className="my-posts">
+            {images.map((image) => (
+              <PostCard key={image._id} images={image} showDelete={true} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

@@ -4,6 +4,7 @@ import PostCard from "../../components/post card/PostCard";
 import PostForm from "../../components/postForm/PostForm";
 import { getAllImages } from "../../redux/api/imageAPI";
 import "./feed.scss";
+import { FadeLoader } from "react-spinners";
 
 const Feed = () => {
   const [images, setImages] = useState([]);
@@ -33,11 +34,20 @@ const Feed = () => {
         <h2>Make a post</h2>
         <PostForm />
         <h2>See what others have posted</h2>
-        <div className="show-posts">
-          {images.map((image) => (
-            <PostCard key={image._id} images={image} showDelete={false} username={image.owner.username}/>
-          ))}
-        </div>
+        {loading ? (
+          <FadeLoader color="#786bb4" />
+        ) : (
+          <div className="show-posts">
+            {images.map((image) => (
+              <PostCard
+                key={image._id}
+                images={image}
+                showDelete={false}
+                username={image.owner.username}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

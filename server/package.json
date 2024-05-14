@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
     "build": "npm i",
-    "start": "node src/index.js"
+    "start": "node index.js"
   },
   "author": "ayush",
   "license": "ISC",

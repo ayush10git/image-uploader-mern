@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import axios from "axios";
 
-const server = "http://localhost:8000/api/v1";
+const server = "https://image-uploader-mern.onrender.com/api/v1";
 
 export const imageAPI = createApi({
   reducerPath: "imageApi",
