@@ -37,7 +37,7 @@ const Login = () => {
         toast.success("Login Successful");
         console.log(data.data.user);
       } else {
-        toast.error(res.data.message);
+        toast.error(data.data.message);
       }
     } catch (error) {
       console.log(error);
