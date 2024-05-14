@@ -37,7 +37,6 @@ const PostCard = ({ images, showDelete, username }) => {
     if (userId !== owner) {
       try {
         await viewImage(imageId);
-        console.log("View count incremented successfully");
       } catch (error) {
         console.error("Failed to increment view count:", error.message);
       }
