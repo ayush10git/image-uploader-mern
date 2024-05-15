@@ -35,7 +35,7 @@ const MyPosts = () => {
       ) : (
         <div
           className="posts"
-          style={images.length == 0 ? { height: "calc(100vh - 70px)" } : {}}
+          style={images.length == 0 ? { height: "calc(100vh - 70px)" } : {height: "100%"}}
         >
           <h1>
             {images.length != 0 ? "Your Posts" : "You Haven't Posted Yet!"}
